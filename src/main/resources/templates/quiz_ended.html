@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Ended</title>
+</head>
+<body>
+    <p th:text="'You have correctly answered ' + ${correctAnswers} + ' out of ' + ${nQuestions} + ' questions.'"></p>
+    <p th:text="${percentage} + '% correct answers.'"></p>
+</body>
+</html>

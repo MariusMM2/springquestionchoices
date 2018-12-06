@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${question.name}"></title>
+</head>
+<body>
+    <h1 th:text="'Question: ' + ${question.name}"></h1>
+    <form action="/question_page" method="post">
+        <th:foreach th:each="answer, iStat : ${question.answers}">
+            <input type="radio" name="answer" th:value="${iStat.index}" th:text="${answer}"><br>
+        </th:foreach>
+        <p th:text="${question.correctAnswer}"></p>
+        <input type="submit" value="Submit Answer">
+    </form>
+</body>
+</html>
